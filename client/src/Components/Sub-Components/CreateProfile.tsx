@@ -1,0 +1,130 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+type FormField =
+  | "name"
+  | "email"
+  | "airlineName"
+  | "iataCode"
+  | "icaoCode"
+  | "country"
+  | "state"
+  | "district"
+  | "city"
+  | "districtCode";
+
+const inputForms: { type: string; name: FormField; placeholder: string }[] = [
+  { type: "text", name: "name", placeholder: "Name" },
+  { type: "email", name: "email", placeholder: "Email" },
+  { type: "text", name: "airlineName", placeholder: "Airline Name" },
+  { type: "text", name: "iataCode", placeholder: "IATA Code" },
+  { type: "text", name: "icaoCode", placeholder: "ICAO Code" },
+  { type: "text", name: "country", placeholder: "Country" },
+  { type: "text", name: "state", placeholder: "State" },
+  { type: "text", name: "district", placeholder: "District" },
+  { type: "text", name: "city", placeholder: "City" },
+  { type: "number", name: "districtCode", placeholder: "District Code" },
+];
+
+const CreateProfile: React.FC = () => {
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState<Record<FormField, string>>({
+    name: "",
+    email: "",
+    airlineName: "",
+    iataCode: "",
+    icaoCode: "",
+    country: "",
+    state: "",
+    district: "",
+    city: "",
+    districtCode: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target as HTMLInputElement;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("http://localhost:5000/api/profile", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error("Failed to create profile");
+
+      await res.json(); // you can use the returned data if needed
+      navigate("/route-card");
+    } catch (err: unknown) {
+      console.error(err);
+      if (err instanceof Error) {
+        setErrorMsg(err.message);
+      } else {
+        setErrorMsg("Something went wrong");
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[#c9dfff8c] px-4">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold text-[#1e941a] mb-2">
+          Create Airline's Profile
+        </h1>
+        <p className="text-gray-600 mb-6">
+          Fill in the details below to create your profile.
+        </p>
+      </div>
+
+      <form
+        onSubmit={handleSubmit}
+        className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-2xl"
+      >
+        {inputForms.map(({ type, name, placeholder }) => (
+          <div className="relative w-full" key={name}>
+            <input
+              type={type}
+              name={name}
+              placeholder={placeholder}
+              value={formData[name]}
+              onChange={handleChange}
+              className="green-hover-input p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#1e941a] transition-all duration-300 shadow-sm text-[#1e941a]"
+              required
+            />
+          </div>
+        ))}
+
+        {errorMsg && (
+          <p className="col-span-full text-red-600 text-center">{errorMsg}</p>
+        )}
+
+        <div className="col-span-full flex justify-center">
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className={`mt-4 bg-[#256b22] hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-md shadow-lg transition-all duration-200 ${
+              isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+          >
+            {isSubmitting ? "Creating..." : "Create Profile"}
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default CreateProfile;
