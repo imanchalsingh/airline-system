@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
       <div className="flex items-center justify-between h-full flex-row">
         <div className="flex items-center justify-left h-full pl-2">
           <Plane />
-          <h1 className="text-2xl font-semibold pl-2">Air Line Reservation</h1>
+          <h1 className="text-2xl font-semibold pl-2">SkyTrip</h1>
         </div>
         <div>
           <div

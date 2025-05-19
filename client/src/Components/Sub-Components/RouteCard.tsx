@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Flights from "../SubSub-Components/Flights";
 import Reservation from "../SubSub-Components/Reservation";
 import MyBooking from "../SubSub-Components/MyBooking";
+import MainWel from "../SubSub-Components/MainWel";
 
 const RouteCard: React.FC = () => {
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
@@ -35,6 +36,7 @@ const RouteCard: React.FC = () => {
       </div>
 
       <div className="mt-6 w-full">
+        {selectedCard === null && <MainWel />}
         {selectedCard === 1 && <Flights />}
         {selectedCard === 2 && <Reservation />}
         {selectedCard === 3 && <MyBooking />}
