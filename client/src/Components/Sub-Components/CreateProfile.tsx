@@ -4,9 +4,6 @@ import { useNavigate } from "react-router-dom";
 type FormField =
   | "name"
   | "email"
-  | "airlineName"
-  | "iataCode"
-  | "icaoCode"
   | "country"
   | "state"
   | "district"
@@ -16,9 +13,6 @@ type FormField =
 const inputForms: { type: string; name: FormField; placeholder: string }[] = [
   { type: "text", name: "name", placeholder: "Name" },
   { type: "email", name: "email", placeholder: "Email" },
-  { type: "text", name: "airlineName", placeholder: "Airline Name" },
-  { type: "text", name: "iataCode", placeholder: "IATA Code" },
-  { type: "text", name: "icaoCode", placeholder: "ICAO Code" },
   { type: "text", name: "country", placeholder: "Country" },
   { type: "text", name: "state", placeholder: "State" },
   { type: "text", name: "district", placeholder: "District" },
@@ -27,14 +21,12 @@ const inputForms: { type: string; name: FormField; placeholder: string }[] = [
 ];
 
 const CreateProfile: React.FC = () => {
+  const [passwordDialog, setPasswordDialog] = useState(false);
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState<Record<FormField, string>>({
     name: "",
     email: "",
-    airlineName: "",
-    iataCode: "",
-    icaoCode: "",
     country: "",
     state: "",
     district: "",
@@ -44,6 +36,10 @@ const CreateProfile: React.FC = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+
+  const handlePasswordDialog = () => {
+    setPasswordDialog(true);
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target as HTMLInputElement;
@@ -64,7 +60,7 @@ const CreateProfile: React.FC = () => {
 
       if (!res.ok) throw new Error("Failed to create profile");
 
-      await res.json(); // you can use the returned data if needed
+      await res.json();
       navigate("/route-card");
     } catch (err: unknown) {
       console.error(err);
@@ -106,7 +102,21 @@ const CreateProfile: React.FC = () => {
             />
           </div>
         ))}
-
+        <select
+          onChange={(e) => {
+            const selectedValue = e.target.value;
+            if (selectedValue === "Admin") {
+              handlePasswordDialog(); // dialog खोल दो
+            }
+          }}
+          className="green-hover-input p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#1e941a] transition-all duration-300 shadow-sm text-[#1e941a]"
+        >
+          <option value="" disabled selected hidden>
+            Select Role
+          </option>
+          <option value="User">User</option>
+          <option value="Admin">Admin</option>
+        </select>
         {errorMsg && (
           <p className="col-span-full text-red-600 text-center">{errorMsg}</p>
         )}
@@ -123,6 +133,38 @@ const CreateProfile: React.FC = () => {
           </button>
         </div>
       </form>
+      {/* ✅ Dialog Box */}
+      {passwordDialog && (
+        <div className="fixed inset-0 bg-[#75767579] bg-opacity-50 flex items-center justify-center z-50">
+          <div className=" relative bg-white p-6 rounded-lg shadow-lg text-center max-w-sm w-full">
+            <button
+              onClick={() => setPasswordDialog(false)}
+              title="Remove booking"
+              className="absolute top-2 right-2 text-red-600 hover:text-red-800 cursor-pointer"
+            >
+              🗑
+            </button>
+            <h2 className="text-xl font-semibold text-green-600 mb-4">
+              Enter Admin Password
+            </h2>
+
+            <form action="submit">
+              <input
+                type="password"
+                placeholder="Admin Password"
+                required
+                className="green-hover-input p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#1e941a] transition-all duration-300 shadow-sm text-[#1e941a]"
+              />
+              <button
+                type="submit"
+                className="bg-[#256b22] text-white px-6 py-1.5 rounded hover:bg-[#1e941a] transition cursor-pointer mt-4"
+              >
+                Confirm
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
