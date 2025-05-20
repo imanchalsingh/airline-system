@@ -106,12 +106,12 @@ const CreateProfile: React.FC = () => {
           onChange={(e) => {
             const selectedValue = e.target.value;
             if (selectedValue === "Admin") {
-              handlePasswordDialog(); // dialog खोल दो
+              handlePasswordDialog();
             }
           }}
           className="green-hover-input p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#1e941a] transition-all duration-300 shadow-sm text-[#1e941a]"
         >
-          <option value="" disabled selected hidden>
+          <option disabled selected hidden>
             Select Role
           </option>
           <option value="User">User</option>
