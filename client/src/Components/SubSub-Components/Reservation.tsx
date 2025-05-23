@@ -114,13 +114,13 @@ const Reservation: React.FC = () => {
             <div className="mt-6 flex gap-4 justify-between">
               <button
                 onClick={handleBooking}
-                className="flex-1 bg-[#4d92fa] text-white py-2 px-4 rounded-lg hover:bg-[#4d92fae2] transition cursor-pointer"
+                className="flex-1 bg-[#4d92fa] text-white py-2 px-2 rounded-lg hover:bg-[#4d92fae2] transition cursor-pointer"
               >
                 ✅ Book Now
               </button>
               <button
                 onClick={handleReset}
-                className="flex-1 bg-gray-300 text-gray-800 py-2 px-4 rounded-lg hover:bg-gray-400 transition cursor-pointer"
+                className="flex-1 bg-gray-300 text-gray-800 py-2 px-2 rounded-lg hover:bg-gray-400 transition cursor-pointer"
               >
                 🔄 Reset
               </button>

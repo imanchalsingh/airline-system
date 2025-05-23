@@ -29,14 +29,14 @@ const Flights: React.FC = () => {
     fetchFlights();
   }, []);
   return (
-    <div className="p-6 max-w-7xl mx-auto flex flex-col items-center bg-gradient-to-r from-blue-100 to-indigo-200 rounded-lg shadow-lg">
-      <div className="grid grid-cols-3 gap-8 w-full">
+    <div className="p-4 sm:p-6 max-w-7xl mx-auto flex flex-col items-center bg-gradient-to-r from-blue-100 to-indigo-200 rounded-lg shadow-lg">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
         {flights.map((flight) => (
           <div
             key={flight.id}
-            className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+            className="bg-white rounded-xl shadow-md p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300 cursor-pointer w-full"
           >
-            <h2 className="text-xl font-semibold text-[#4d92fa] mb-3">
+            <h2 className="text-lg sm:text-xl font-semibold text-[#4d92fa] mb-3">
               Flight Number:{" "}
               <span className="font-bold">{flight.flightNumber}</span>
             </h2>
