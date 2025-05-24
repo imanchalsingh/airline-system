@@ -34,8 +34,13 @@ const CreateProfile: React.FC = () => {
     districtCode: "",
   });
 
+  const [role, setRole] = useState<string>("");
+  const [adminPassword, setAdminPassword] = useState("");
+  const [isAdmin, setIsAdmin] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+
+  const ADMIN_DEFAULT_PASSWORD = "admin123";
 
   const handlePasswordDialog = () => {
     setPasswordDialog(true);
@@ -46,13 +51,33 @@ const CreateProfile: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleRoleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedValue = e.target.value;
+    setRole(selectedValue);
+    if (selectedValue === "Admin") {
+      handlePasswordDialog();
+    }
+  };
+
+  const handleAdminPasswordSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (adminPassword === ADMIN_DEFAULT_PASSWORD) {
+      setIsAdmin(true);
+      setPasswordDialog(false);
+    } else {
+      setIsAdmin(false);
+      setAdminPassword("");
+      alert("Incorrect Admin Password");
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setErrorMsg("");
 
     try {
-      const res = await fetch("http://localhost:5000/api/profile", {
+      const res = await fetch("http://localhost:5000/api/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -61,7 +86,7 @@ const CreateProfile: React.FC = () => {
       if (!res.ok) throw new Error("Failed to create profile");
 
       await res.json();
-      navigate("/route-card");
+      navigate("/route-card", { state: { isAdmin } });
     } catch (err: unknown) {
       console.error(err);
       if (err instanceof Error) {
@@ -103,15 +128,12 @@ const CreateProfile: React.FC = () => {
           </div>
         ))}
         <select
-          onChange={(e) => {
-            const selectedValue = e.target.value;
-            if (selectedValue === "Admin") {
-              handlePasswordDialog();
-            }
-          }}
+          value={role}
+          onChange={handleRoleChange}
           className="green-hover-input p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#1e941a] transition-all duration-300 shadow-sm text-[#1e941a]"
+          required
         >
-          <option disabled selected hidden>
+          <option disabled value="">
             Select Role
           </option>
           <option value="User">User</option>
@@ -147,12 +169,13 @@ const CreateProfile: React.FC = () => {
             <h2 className="text-xl font-semibold text-green-600 mb-4">
               Enter Admin Password
             </h2>
-
-            <form action="submit">
+            <form onSubmit={handleAdminPasswordSubmit}>
               <input
                 type="password"
                 placeholder="Admin Password"
                 required
+                value={adminPassword}
+                onChange={(e) => setAdminPassword(e.target.value)}
                 className="green-hover-input p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#1e941a] transition-all duration-300 shadow-sm text-[#1e941a]"
               />
               <button
