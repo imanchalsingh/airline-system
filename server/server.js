@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 5000;
 // Routes
 app.use("/api/flights", flightRoutes);
 
-app.use("/api/profile", require("./Apis/ProfileRoute"));
+app.use("/api/users", require("./Apis/ProfileRoute"));
 
 // Test route
 app.get("/", (req, res) => {
