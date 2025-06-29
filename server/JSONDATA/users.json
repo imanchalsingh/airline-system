@@ -1,9 +1,9 @@
 [
   {
-    "name": "Dev01",
-    "email": "dev01@gmail.com",
+    "name": "test",
+    "email": "test@gmail.com",
     "country": "India",
-    "state": "UP",
+    "state": "up",
     "district": "Ayodhya",
     "city": "Lucknow",
     "districtCode": "42"

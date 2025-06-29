@@ -32,7 +32,7 @@ const Admin: React.FC = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/users");
+      const res = await fetch("http://localhost:5000/api/profile");
       const data = await res.json();
       setUsers(data);
     } catch {
@@ -43,7 +43,7 @@ const Admin: React.FC = () => {
   const handleRemoveUser = async (email: string) => {
     if (!window.confirm("Are you sure you want to remove this user?")) return;
     try {
-      await fetch(`http://localhost:5000/api/users/${email}`, { method: "DELETE" });
+      await fetch(`http://localhost:5000/api/profile/${email}`, { method: "DELETE" });
       setUsers(users.filter((u) => u.email !== email));
       setUserMsg("User removed successfully!");
     } catch {
