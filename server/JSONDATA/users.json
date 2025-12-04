@@ -1,11 +1,20 @@
 [
   {
-    "name": "test",
-    "email": "test@gmail.com",
+    "name": "Dev",
+    "email": "dev@admin.in",
     "country": "India",
-    "state": "up",
+    "state": "UP",
     "district": "Ayodhya",
     "city": "Lucknow",
-    "districtCode": "42"
+    "districtCode": "324533"
+  },
+  {
+    "name": "test",
+    "email": "test@admin.com",
+    "country": "USA",
+    "state": "California",
+    "district": "Unknown",
+    "city": "Unknown",
+    "districtCode": "0000"
   }
 ]
