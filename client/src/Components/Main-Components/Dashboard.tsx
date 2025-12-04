@@ -7,6 +7,7 @@ import MainWel from "../SubSub-Components/MainPageAsDashboard";
 import MyBooking from "../SubSub-Components/MyBooking";
 import Flights from "../SubSub-Components/Flights";
 import Reservation from "../SubSub-Components/Reservation";
+import Admin from "../SubSub-Components/Admin";
 
 const Dashboard: React.FC = () => {
   return (
@@ -19,7 +20,7 @@ const Dashboard: React.FC = () => {
         <Route path="/MainPageAsDashboard" element={<MainWel />} />
         <Route path="/my-booking" element={<MyBooking />} />
         <Route path="/flights" element={<Flights />} />
-        <Route path="/admin-panel" element={<Flights />} />
+        <Route path="/admin-panel" element={<Admin />} />
         <Route path="/reservation" element={<Reservation />} />
       </Routes>
     </div>

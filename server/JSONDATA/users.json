@@ -1,14 +1,5 @@
 [
   {
-    "name": "Dev",
-    "email": "dev@admin.in",
-    "country": "India",
-    "state": "UP",
-    "district": "Ayodhya",
-    "city": "Lucknow",
-    "districtCode": "324533"
-  },
-  {
     "name": "test",
     "email": "test@admin.com",
     "country": "USA",

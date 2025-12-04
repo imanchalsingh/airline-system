@@ -72,7 +72,7 @@ const RouteCard: React.FC = () => {
       iconColor: "text-amber-500",
       count: 8,
       stat: "Your Bookings",
-      path: "/my-bookings",
+      path: "/my-booking",
     },
     ...(isAdmin
       ? [
