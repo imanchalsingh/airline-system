@@ -46,8 +46,9 @@ const RouteCard: React.FC = () => {
       name: "Flight Management",
       icon: Plane,
       description: "Manage flight schedules & routes",
-      color: "from-blue-500 to-cyan-500",
-      iconColor: "text-blue-500",
+      color: "from-[#F09848] to-[#ffb366]",
+      iconColor: "text-[#F09848]",
+      bgColor: "bg-[#F09848]/10",
       count: 24,
       stat: "Active Flights",
       path: "/flights",
@@ -57,8 +58,9 @@ const RouteCard: React.FC = () => {
       name: "Reservations",
       icon: Calendar,
       description: "Book new reservations",
-      color: "from-emerald-500 to-green-500",
-      iconColor: "text-emerald-500",
+      color: "from-[#F09848] to-[#ffb366]",
+      iconColor: "text-[#F09848]",
+      bgColor: "bg-[#F09848]/10",
       count: 156,
       stat: "Today's Bookings",
       path: "/reservation",
@@ -68,8 +70,9 @@ const RouteCard: React.FC = () => {
       name: "My Bookings",
       icon: Briefcase,
       description: "View & manage your bookings",
-      color: "from-amber-500 to-orange-500",
-      iconColor: "text-amber-500",
+      color: "from-[#F09848] to-[#ffb366]",
+      iconColor: "text-[#F09848]",
+      bgColor: "bg-[#F09848]/10",
       count: 8,
       stat: "Your Bookings",
       path: "/my-booking",
@@ -81,8 +84,9 @@ const RouteCard: React.FC = () => {
             name: "Admin Panel",
             icon: UserCog,
             description: "System administration",
-            color: "from-purple-500 to-pink-500",
-            iconColor: "text-purple-500",
+            color: "from-[#F09848] to-[#ffb366]",
+            iconColor: "text-[#F09848]",
+            bgColor: "bg-[#F09848]/10",
             count: "Pro",
             stat: "Admin Access",
             path: "/admin-panel",
@@ -96,7 +100,6 @@ const RouteCard: React.FC = () => {
   };
 
   const handleLogout = () => {
-    // Clear any session data if needed
     navigate("/");
   };
 
@@ -128,43 +131,43 @@ const RouteCard: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50 p-4 md:p-6">
+    <div className="min-h-screen bg-gradient-to-br from-[#182850] to-[#0f1c42] p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Top Navigation Bar */}
         <div className="mb-8">
-          <div className="flex items-center justify-between bg-white rounded-2xl shadow-lg border border-blue-100 p-4">
+          <div className="flex items-center justify-between bg-[#1e3058] rounded-2xl shadow-lg border border-[#2a3a6a] p-4">
             <div className="flex items-center space-x-4">
               <div 
                 onClick={handleHomeClick}
                 className="flex items-center space-x-3 cursor-pointer group"
               >
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <Plane className="text-white" size={24} />
+                <div className="w-10 h-10 bg-gradient-to-r from-[#F09848] to-[#ffb366] rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform border border-[#F09848]/30">
+                  <Plane className="text-[#182850]" size={24} />
                 </div>
                 <div>
-                  <h1 className="text-xl font-bold text-gray-800">SkyLine Airlines</h1>
-                  <p className="text-sm text-gray-600">Dashboard</p>
+                  <h1 className="text-xl font-bold text-[#E8F0F0]">SkyLine Airlines</h1>
+                  <p className="text-sm text-[#b0c4c4]">Dashboard</p>
                 </div>
               </div>
             </div>
             
             <div className="flex items-center space-x-4">
               <div className="hidden md:block text-right">
-                <p className="text-sm font-medium text-gray-700">{userName}</p>
-                <p className="text-xs text-gray-600">{isAdmin ? "Administrator" : "Standard User"}</p>
+                <p className="text-sm font-medium text-[#E8F0F0]">{userName}</p>
+                <p className="text-xs text-[#b0c4c4]">{isAdmin ? "Administrator" : "Standard User"}</p>
               </div>
               
               <div className="flex items-center space-x-2">
                 <button
                   onClick={handleHomeClick}
-                  className="p-2 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-colors"
+                  className="p-2 text-[#F09848] hover:text-[#ffb366] hover:bg-[#F09848]/10 rounded-lg transition-colors border border-transparent hover:border-[#F09848]/30"
                   title="Dashboard"
                 >
                   <Home size={20} />
                 </button>
                 <button
                   onClick={handleLogout}
-                  className="p-2 text-red-600 hover:text-red-800 hover:bg-red-50 rounded-lg transition-colors"
+                  className="p-2 text-[#ff6b6b] hover:text-[#ff8e8e] hover:bg-[#ff6b6b]/10 rounded-lg transition-colors border border-transparent hover:border-[#ff6b6b]/30"
                   title="Logout"
                 >
                   <LogOut size={20} />
@@ -178,30 +181,30 @@ const RouteCard: React.FC = () => {
         <div className="mb-8 md:mb-12">
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
+              <h1 className="text-3xl md:text-4xl font-bold text-[#E8F0F0]">
                 {getGreeting()},{" "}
-                <span className="text-blue-600">{userName}</span>
+                <span className="text-[#F09848]">{userName}</span>
                 <Sparkles
-                  className="inline-block ml-2 text-amber-500"
+                  className="inline-block ml-2 text-[#F09848]"
                   size={24}
                 />
               </h1>
-              <p className="text-gray-600 mt-2">
+              <p className="text-[#b0c4c4] mt-2">
                 Welcome to your airline management dashboard
               </p>
             </div>
 
             <div className="mt-4 md:mt-0">
-              <div className="flex items-center space-x-4 bg-white p-4 rounded-2xl shadow-md border border-blue-100">
+              <div className="flex items-center space-x-4 bg-[#1e3058] p-4 rounded-2xl shadow-md border border-[#2a3a6a]">
                 <div className="text-right">
-                  <div className="text-2xl font-bold text-blue-600 flex items-center">
+                  <div className="text-2xl font-bold text-[#F09848] flex items-center">
                     <Clock size={20} className="mr-2" />
                     {formatTime()}
                   </div>
-                  <p className="text-sm text-gray-600">{formatDate()}</p>
+                  <p className="text-sm text-[#b0c4c4]">{formatDate()}</p>
                 </div>
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
-                  <Plane className="text-white" size={24} />
+                <div className="w-12 h-12 bg-gradient-to-r from-[#F09848] to-[#ffb366] rounded-xl flex items-center justify-center border border-[#F09848]/30">
+                  <Plane className="text-[#182850]" size={24} />
                 </div>
               </div>
             </div>
@@ -209,65 +212,65 @@ const RouteCard: React.FC = () => {
 
           {/* Quick Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            <div className="bg-white p-5 rounded-2xl shadow-sm border border-blue-100">
+            <div className="bg-[#1e3058] p-5 rounded-2xl shadow-sm border border-[#2a3a6a]">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-gray-600">Active Users</p>
-                  <p className="text-2xl font-bold text-gray-800">1,842</p>
+                  <p className="text-sm text-[#b0c4c4]">Active Users</p>
+                  <p className="text-2xl font-bold text-[#E8F0F0]">1,842</p>
                 </div>
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <Users className="text-blue-600" size={20} />
+                <div className="w-10 h-10 bg-[#F09848]/20 rounded-lg flex items-center justify-center border border-[#F09848]/30">
+                  <Users className="text-[#F09848]" size={20} />
                 </div>
               </div>
-              <div className="mt-3 text-xs text-green-600 flex items-center">
+              <div className="mt-3 text-xs text-green-400 flex items-center">
                 <CheckCircle size={12} className="mr-1" />
                 <span>+12% from last week</span>
               </div>
             </div>
 
-            <div className="bg-white p-5 rounded-2xl shadow-sm border border-blue-100">
+            <div className="bg-[#1e3058] p-5 rounded-2xl shadow-sm border border-[#2a3a6a]">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-gray-600">Today's Revenue</p>
-                  <p className="text-2xl font-bold text-gray-800">$42.8K</p>
+                  <p className="text-sm text-[#b0c4c4]">Today's Revenue</p>
+                  <p className="text-2xl font-bold text-[#E8F0F0]">$42.8K</p>
                 </div>
-                <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
-                  <BarChart3 className="text-emerald-600" size={20} />
+                <div className="w-10 h-10 bg-[#F09848]/20 rounded-lg flex items-center justify-center border border-[#F09848]/30">
+                  <BarChart3 className="text-[#F09848]" size={20} />
                 </div>
               </div>
-              <div className="mt-3 text-xs text-green-600 flex items-center">
+              <div className="mt-3 text-xs text-green-400 flex items-center">
                 <CheckCircle size={12} className="mr-1" />
                 <span>+8.2% from yesterday</span>
               </div>
             </div>
 
-            <div className="bg-white p-5 rounded-2xl shadow-sm border border-blue-100">
+            <div className="bg-[#1e3058] p-5 rounded-2xl shadow-sm border border-[#2a3a6a]">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-gray-600">Flight On-time</p>
-                  <p className="text-2xl font-bold text-gray-800">94.7%</p>
+                  <p className="text-sm text-[#b0c4c4]">Flight On-time</p>
+                  <p className="text-2xl font-bold text-[#E8F0F0]">94.7%</p>
                 </div>
-                <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">
-                  <Shield className="text-amber-600" size={20} />
+                <div className="w-10 h-10 bg-[#F09848]/20 rounded-lg flex items-center justify-center border border-[#F09848]/30">
+                  <Shield className="text-[#F09848]" size={20} />
                 </div>
               </div>
-              <div className="mt-3 text-xs text-green-600 flex items-center">
+              <div className="mt-3 text-xs text-green-400 flex items-center">
                 <CheckCircle size={12} className="mr-1" />
                 <span>+2.3% improvement</span>
               </div>
             </div>
 
-            <div className="bg-white p-5 rounded-2xl shadow-sm border border-blue-100">
+            <div className="bg-[#1e3058] p-5 rounded-2xl shadow-sm border border-[#2a3a6a]">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-gray-600">Available Seats</p>
-                  <p className="text-2xl font-bold text-gray-800">3,284</p>
+                  <p className="text-sm text-[#b0c4c4]">Available Seats</p>
+                  <p className="text-2xl font-bold text-[#E8F0F0]">3,284</p>
                 </div>
-                <div className="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center">
-                  <Plane className="text-cyan-600" size={20} />
+                <div className="w-10 h-10 bg-[#F09848]/20 rounded-lg flex items-center justify-center border border-[#F09848]/30">
+                  <Plane className="text-[#F09848]" size={20} />
                 </div>
               </div>
-              <div className="mt-3 text-xs text-blue-600 flex items-center">
+              <div className="mt-3 text-xs text-[#F09848] flex items-center">
                 <span>Across all flights</span>
               </div>
             </div>
@@ -278,12 +281,12 @@ const RouteCard: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Route Cards Section */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl shadow-lg border border-blue-100 p-6">
+            <div className="bg-[#1e3058] rounded-2xl shadow-lg border border-[#2a3a6a] p-6">
               <div className="mb-6">
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                <h2 className="text-2xl font-bold text-[#E8F0F0] mb-2">
                   Quick Actions
                 </h2>
-                <p className="text-gray-600">Select a module to navigate</p>
+                <p className="text-[#b0c4c4]">Select a module to navigate</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -299,10 +302,10 @@ const RouteCard: React.FC = () => {
                     ></div>
 
                     {/* Card Content */}
-                    <div className="relative bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-200 group-hover:border-transparent transition-all duration-300">
+                    <div className="relative bg-[#1e3058]/80 backdrop-blur-sm p-6 rounded-2xl border border-[#2a3a6a] group-hover:border-[#F09848]/30 transition-all duration-300">
                       <div className="flex items-start justify-between mb-4">
                         <div
-                          className={`p-3 rounded-xl bg-gradient-to-br ${card.color} bg-opacity-10`}
+                          className={`p-3 rounded-xl ${card.bgColor} border border-[#F09848]/30`}
                         >
                           <card.icon
                             className={`${card.iconColor}`}
@@ -310,28 +313,28 @@ const RouteCard: React.FC = () => {
                           />
                         </div>
                         <ArrowRight
-                          className="text-blue-500 group-hover:translate-x-1 transition-transform"
+                          className="text-[#F09848] group-hover:translate-x-1 transition-transform"
                           size={18}
                         />
                       </div>
 
-                      <h3 className="text-xl font-bold text-gray-800 mb-2">
+                      <h3 className="text-xl font-bold text-[#E8F0F0] mb-2">
                         {card.name}
                       </h3>
 
-                      <p className="text-gray-600 text-sm mb-4">
+                      <p className="text-[#b0c4c4] text-sm mb-4">
                         {card.description}
                       </p>
 
-                      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <div className="flex items-center justify-between pt-4 border-t border-[#2a3a6a]">
                         <div>
-                          <p className="text-2xl font-bold text-gray-800">
+                          <p className="text-2xl font-bold text-[#E8F0F0]">
                             {card.count}
                           </p>
-                          <p className="text-xs text-gray-500">{card.stat}</p>
+                          <p className="text-xs text-[#b0c4c4]">{card.stat}</p>
                         </div>
                         <div
-                          className={`px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-600`}
+                          className={`px-3 py-1 rounded-full text-xs font-medium bg-[#F09848]/20 text-[#F09848] border border-[#F09848]/30`}
                         >
                           Click to open
                         </div>
@@ -347,8 +350,8 @@ const RouteCard: React.FC = () => {
           <div className="lg:col-span-1">
             <div className="space-y-6">
               {/* Recent Activity */}
-              <div className="bg-white rounded-2xl shadow-lg border border-blue-100 p-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-4">
+              <div className="bg-[#1e3058] rounded-2xl shadow-lg border border-[#2a3a6a] p-6">
+                <h3 className="text-xl font-bold text-[#E8F0F0] mb-4">
                   Recent Activity
                 </h3>
                 <div className="space-y-4">
@@ -376,14 +379,14 @@ const RouteCard: React.FC = () => {
                   ].map((activity, index) => (
                     <div
                       key={index}
-                      className="flex items-start space-x-3 p-3 hover:bg-blue-50 rounded-xl transition-colors"
+                      className="flex items-start space-x-3 p-3 hover:bg-[#2a3a6a] rounded-xl transition-colors"
                     >
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                      <div className="w-2 h-2 bg-[#F09848] rounded-full mt-2"></div>
                       <div className="flex-1">
-                        <p className="text-gray-800 font-medium">
+                        <p className="text-[#E8F0F0] font-medium">
                           {activity.action}
                         </p>
-                        <p className="text-sm text-gray-500">
+                        <p className="text-sm text-[#b0c4c4]">
                           {activity.time} • by {activity.user}
                         </p>
                       </div>
@@ -393,7 +396,7 @@ const RouteCard: React.FC = () => {
               </div>
 
               {/* System Status */}
-              <div className="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl shadow-lg p-6 text-white">
+              <div className="bg-gradient-to-r from-[#182850] to-[#2a3a6a] rounded-2xl shadow-lg p-6 text-[#E8F0F0] border border-[#F09848]/30">
                 <h3 className="text-xl font-bold mb-4">System Status</h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
@@ -418,7 +421,7 @@ const RouteCard: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="mt-6 pt-4 border-t border-white/20">
+                <div className="mt-6 pt-4 border-t border-[#E8F0F0]/20">
                   <p className="text-sm opacity-90">
                     All systems running smoothly
                   </p>
@@ -429,7 +432,7 @@ const RouteCard: React.FC = () => {
         </div>
 
         {/* Footer */}
-        <div className="mt-8 text-center text-gray-500 text-sm">
+        <div className="mt-8 text-center text-[#b0c4c4] text-sm">
           <p>
             SkyLine Airlines Management System v2.0 • {new Date().getFullYear()}
           </p>

@@ -133,29 +133,29 @@ const Admin: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 p-4 md:p-6">
+    <div className="min-h-screen bg-gradient-to-br from-[#182850] to-[#0f1c42] p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-800 flex items-center">
-                <Shield className="mr-3 text-blue-600" size={32} />
+              <h1 className="text-3xl md:text-4xl font-bold text-[#E8F0F0] flex items-center">
+                <Shield className="mr-3 text-[#F09848]" size={32} />
                 Admin Control Panel
               </h1>
-              <p className="text-gray-600 mt-2">Manage flights, users, and system operations</p>
+              <p className="text-[#b0c4c4] mt-2">Manage flights, users, and system operations</p>
             </div>
             <div className="mt-4 md:mt-0 flex items-center space-x-3">
-              <div className="px-4 py-2 bg-white rounded-xl shadow-sm border border-blue-100">
-                <p className="text-sm text-gray-600">Last Updated</p>
-                <p className="font-semibold text-gray-800">{new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+              <div className="px-4 py-2 bg-[#1e3058] rounded-xl shadow-sm border border-[#2a3a6a]">
+                <p className="text-sm text-[#b0c4c4]">Last Updated</p>
+                <p className="font-semibold text-[#E8F0F0]">{new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
               </div>
             </div>
           </div>
 
           {/* Stats Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            <div className="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl p-6 text-white shadow-lg">
+            <div className="bg-gradient-to-r from-[#182850] to-[#2a3a6a] rounded-2xl p-6 text-[#E8F0F0] shadow-lg border border-[#F09848]/30">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm opacity-90">Total Users</p>
@@ -163,7 +163,7 @@ const Admin: React.FC = () => {
                 </div>
                 <Users size={32} className="opacity-80" />
               </div>
-              <div className="mt-4 pt-4 border-t border-white/20">
+              <div className="mt-4 pt-4 border-t border-[#E8F0F0]/20">
                 <p className="text-xs flex items-center">
                   <CheckCircle size={12} className="mr-1" />
                   <span>{filteredUsers.filter(u => u.status === "active").length} active</span>
@@ -171,54 +171,54 @@ const Admin: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-blue-100">
+            <div className="bg-[#1e3058] rounded-2xl p-6 shadow-lg border border-[#2a3a6a]">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-gray-600">Active Flights</p>
-                  <p className="text-3xl font-bold text-gray-800 mt-2">{stats.activeFlights}</p>
+                  <p className="text-sm text-[#b0c4c4]">Active Flights</p>
+                  <p className="text-3xl font-bold text-[#E8F0F0] mt-2">{stats.activeFlights}</p>
                 </div>
-                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                  <Plane className="text-blue-600" size={24} />
+                <div className="w-12 h-12 bg-[#F09848]/20 rounded-xl flex items-center justify-center border border-[#F09848]/30">
+                  <Plane className="text-[#F09848]" size={24} />
                 </div>
               </div>
-              <div className="mt-4 pt-4 border-t border-gray-100">
-                <p className="text-xs text-gray-500 flex items-center">
+              <div className="mt-4 pt-4 border-t border-[#2a3a6a]">
+                <p className="text-xs text-[#b0c4c4] flex items-center">
                   <Clock size={12} className="mr-1" />
                   <span>Real-time tracking</span>
                 </p>
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-blue-100">
+            <div className="bg-[#1e3058] rounded-2xl p-6 shadow-lg border border-[#2a3a6a]">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-gray-600">Total Bookings</p>
-                  <p className="text-3xl font-bold text-gray-800 mt-2">{stats.totalBookings.toLocaleString()}</p>
+                  <p className="text-sm text-[#b0c4c4]">Total Bookings</p>
+                  <p className="text-3xl font-bold text-[#E8F0F0] mt-2">{stats.totalBookings.toLocaleString()}</p>
                 </div>
-                <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
-                  <BarChart3 className="text-emerald-600" size={24} />
+                <div className="w-12 h-12 bg-[#F09848]/20 rounded-xl flex items-center justify-center border border-[#F09848]/30">
+                  <BarChart3 className="text-[#F09848]" size={24} />
                 </div>
               </div>
-              <div className="mt-4 pt-4 border-t border-gray-100">
-                <p className="text-xs text-green-600 flex items-center">
+              <div className="mt-4 pt-4 border-t border-[#2a3a6a]">
+                <p className="text-xs text-green-400 flex items-center">
                   <CheckCircle size={12} className="mr-1" />
                   <span>+12% this month</span>
                 </p>
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-blue-100">
+            <div className="bg-[#1e3058] rounded-2xl p-6 shadow-lg border border-[#2a3a6a]">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-gray-600">Revenue</p>
-                  <p className="text-3xl font-bold text-gray-800 mt-2">${stats.revenue.toLocaleString()}</p>
+                  <p className="text-sm text-[#b0c4c4]">Revenue</p>
+                  <p className="text-3xl font-bold text-[#E8F0F0] mt-2">${stats.revenue.toLocaleString()}</p>
                 </div>
-                <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
-                  <span className="text-amber-600 font-bold text-xl">$</span>
+                <div className="w-12 h-12 bg-[#F09848]/20 rounded-xl flex items-center justify-center border border-[#F09848]/30">
+                  <span className="text-[#F09848] font-bold text-xl">$</span>
                 </div>
               </div>
-              <div className="mt-4 pt-4 border-t border-gray-100">
-                <p className="text-xs text-green-600 flex items-center">
+              <div className="mt-4 pt-4 border-t border-[#2a3a6a]">
+                <p className="text-xs text-green-400 flex items-center">
                   <CheckCircle size={12} className="mr-1" />
                   <span>+8.5% growth</span>
                 </p>
@@ -229,10 +229,10 @@ const Admin: React.FC = () => {
 
         {/* Tabs Navigation */}
         <div className="mb-8">
-          <div className="flex space-x-1 bg-white rounded-xl p-1 shadow-sm border border-blue-100 w-fit">
+          <div className="flex space-x-1 bg-[#1e3058] rounded-xl p-1 shadow-sm border border-[#2a3a6a] w-fit">
             <button
               onClick={() => setActiveTab("flights")}
-              className={`px-6 py-3 rounded-lg font-medium transition-all ${activeTab === "flights" ? 'bg-blue-600 text-white' : 'text-gray-600 hover:bg-blue-50'}`}
+              className={`px-6 py-3 rounded-lg font-medium transition-all ${activeTab === "flights" ? 'bg-[#F09848] text-[#182850]' : 'text-[#b0c4c4] hover:bg-[#2a3a6a]'}`}
             >
               <div className="flex items-center">
                 <Plane size={18} className="mr-2" />
@@ -241,7 +241,7 @@ const Admin: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveTab("users")}
-              className={`px-6 py-3 rounded-lg font-medium transition-all ${activeTab === "users" ? 'bg-blue-600 text-white' : 'text-gray-600 hover:bg-blue-50'}`}
+              className={`px-6 py-3 rounded-lg font-medium transition-all ${activeTab === "users" ? 'bg-[#F09848] text-[#182850]' : 'text-[#b0c4c4] hover:bg-[#2a3a6a]'}`}
             >
               <div className="flex items-center">
                 <Users size={18} className="mr-2" />
@@ -256,19 +256,19 @@ const Admin: React.FC = () => {
           {/* Left Column - Flight Management */}
           {activeTab === "flights" && (
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-2xl shadow-lg border border-blue-100 p-6">
+              <div className="bg-[#1e3058] rounded-2xl shadow-lg border border-[#2a3a6a] p-6">
                 <div className="flex items-center justify-between mb-6">
                   <div>
-                    <h3 className="text-xl font-bold text-gray-800">Add New Flight</h3>
-                    <p className="text-gray-600">Create a new flight schedule</p>
+                    <h3 className="text-xl font-bold text-[#E8F0F0]">Add New Flight</h3>
+                    <p className="text-[#b0c4c4]">Create a new flight schedule</p>
                   </div>
-                  <PlusCircle className="text-blue-600" size={24} />
+                  <PlusCircle className="text-[#F09848]" size={24} />
                 </div>
 
                 <form onSubmit={handleAddFlight} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700">Flight Number *</label>
+                      <label className="text-sm font-medium text-[#E8F0F0]">Flight Number *</label>
                       <input
                         type="text"
                         name="flightNumber"
@@ -276,12 +276,12 @@ const Admin: React.FC = () => {
                         value={flight.flightNumber}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                        className="w-full p-3 border border-[#2a3a6a] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F09848] focus:border-[#F09848] transition-all bg-[#1e3058] text-[#E8F0F0] placeholder-[#7a8ab8]"
                       />
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700">Departure *</label>
+                      <label className="text-sm font-medium text-[#E8F0F0]">Departure *</label>
                       <input
                         type="text"
                         name="departure"
@@ -289,12 +289,12 @@ const Admin: React.FC = () => {
                         value={flight.departure}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                        className="w-full p-3 border border-[#2a3a6a] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F09848] focus:border-[#F09848] transition-all bg-[#1e3058] text-[#E8F0F0] placeholder-[#7a8ab8]"
                       />
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700">Arrival *</label>
+                      <label className="text-sm font-medium text-[#E8F0F0]">Arrival *</label>
                       <input
                         type="text"
                         name="arrival"
@@ -302,36 +302,36 @@ const Admin: React.FC = () => {
                         value={flight.arrival}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                        className="w-full p-3 border border-[#2a3a6a] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F09848] focus:border-[#F09848] transition-all bg-[#1e3058] text-[#E8F0F0] placeholder-[#7a8ab8]"
                       />
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700">Date *</label>
+                      <label className="text-sm font-medium text-[#E8F0F0]">Date *</label>
                       <input
                         type="date"
                         name="date"
                         value={flight.date}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                        className="w-full p-3 border border-[#2a3a6a] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F09848] focus:border-[#F09848] transition-all bg-[#1e3058] text-[#E8F0F0] placeholder-[#7a8ab8]"
                       />
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700">Time *</label>
+                      <label className="text-sm font-medium text-[#E8F0F0]">Time *</label>
                       <input
                         type="time"
                         name="time"
                         value={flight.time}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                        className="w-full p-3 border border-[#2a3a6a] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F09848] focus:border-[#F09848] transition-all bg-[#1e3058] text-[#E8F0F0] placeholder-[#7a8ab8]"
                       />
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700">Airline *</label>
+                      <label className="text-sm font-medium text-[#E8F0F0]">Airline *</label>
                       <input
                         type="text"
                         name="airline"
@@ -339,7 +339,7 @@ const Admin: React.FC = () => {
                         value={flight.airline}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                        className="w-full p-3 border border-[#2a3a6a] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F09848] focus:border-[#F09848] transition-all bg-[#1e3058] text-[#E8F0F0] placeholder-[#7a8ab8]"
                       />
                     </div>
                   </div>
@@ -347,7 +347,7 @@ const Admin: React.FC = () => {
                   <div className="pt-4">
                     <button
                       type="submit"
-                      className="w-full py-3.5 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+                      className="w-full py-3.5 bg-gradient-to-r from-[#F09848] to-[#ffb366] hover:from-[#e8893a] hover:to-[#ffa754] text-[#182850] font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
                     >
                       <PlusCircle className="mr-2" size={20} />
                       Add Flight to Schedule
@@ -356,14 +356,14 @@ const Admin: React.FC = () => {
                 </form>
 
                 {message && (
-                  <div className={`mt-4 p-4 rounded-xl ${message.includes("success") ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
+                  <div className={`mt-4 p-4 rounded-xl ${message.includes("success") ? 'bg-green-400/10 border border-green-400/30' : 'bg-red-400/10 border border-red-400/30'}`}>
                     <div className="flex items-center">
                       {message.includes("success") ? (
-                        <CheckCircle className="text-green-600 mr-3" size={20} />
+                        <CheckCircle className="text-green-400 mr-3" size={20} />
                       ) : (
-                        <AlertCircle className="text-red-600 mr-3" size={20} />
+                        <AlertCircle className="text-red-400 mr-3" size={20} />
                       )}
-                      <p className={message.includes("success") ? "text-green-700 font-medium" : "text-red-700 font-medium"}>
+                      <p className={message.includes("success") ? "text-green-400 font-medium" : "text-red-400 font-medium"}>
                         {message}
                       </p>
                     </div>
@@ -376,30 +376,30 @@ const Admin: React.FC = () => {
           {/* Right Column - User Management */}
           {activeTab === "users" && (
             <div className="lg:col-span-3">
-              <div className="bg-white rounded-2xl shadow-lg border border-blue-100 overflow-hidden">
+              <div className="bg-[#1e3058] rounded-2xl shadow-lg border border-[#2a3a6a] overflow-hidden">
                 {/* User Management Header */}
-                <div className="p-6 border-b border-gray-200">
+                <div className="p-6 border-b border-[#2a3a6a]">
                   <div className="flex flex-col md:flex-row md:items-center justify-between">
                     <div>
-                      <h3 className="text-xl font-bold text-gray-800">User Management</h3>
-                      <p className="text-gray-600">Manage all registered users</p>
+                      <h3 className="text-xl font-bold text-[#E8F0F0]">User Management</h3>
+                      <p className="text-[#b0c4c4]">Manage all registered users</p>
                     </div>
                     <div className="flex items-center space-x-3 mt-4 md:mt-0">
                       <div className="relative">
-                        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
+                        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#7a8ab8]" size={18} />
                         <input
                           type="text"
                           placeholder="Search users..."
                           value={searchTerm}
                           onChange={(e) => setSearchTerm(e.target.value)}
-                          className="pl-10 pr-4 py-2.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-full md:w-64"
+                          className="pl-10 pr-4 py-2.5 border border-[#2a3a6a] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F09848] focus:border-[#F09848] w-full md:w-64 bg-[#1e3058] text-[#E8F0F0] placeholder-[#7a8ab8]"
                         />
                       </div>
-                      <button className="p-2.5 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors">
-                        <Filter size={18} />
+                      <button className="p-2.5 border border-[#2a3a6a] rounded-xl hover:bg-[#2a3a6a] transition-colors">
+                        <Filter size={18} className="text-[#b0c4c4]" />
                       </button>
-                      <button className="p-2.5 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors">
-                        <Download size={18} />
+                      <button className="p-2.5 border border-[#2a3a6a] rounded-xl hover:bg-[#2a3a6a] transition-colors">
+                        <Download size={18} className="text-[#b0c4c4]" />
                       </button>
                     </div>
                   </div>
@@ -408,77 +408,77 @@ const Admin: React.FC = () => {
                 {/* Users Table */}
                 <div className="overflow-x-auto">
                   <table className="w-full">
-                    <thead className="bg-gray-50">
+                    <thead className="bg-[#2a3a6a]">
                       <tr>
-                        <th className="py-4 px-6 text-left text-sm font-semibold text-gray-700">User</th>
-                        <th className="py-4 px-6 text-left text-sm font-semibold text-gray-700">Contact</th>
-                        <th className="py-4 px-6 text-left text-sm font-semibold text-gray-700">Location</th>
-                        <th className="py-4 px-6 text-left text-sm font-semibold text-gray-700">Status</th>
-                        <th className="py-4 px-6 text-left text-sm font-semibold text-gray-700">Join Date</th>
-                        <th className="py-4 px-6 text-left text-sm font-semibold text-gray-700">Actions</th>
+                        <th className="py-4 px-6 text-left text-sm font-semibold text-[#E8F0F0]">User</th>
+                        <th className="py-4 px-6 text-left text-sm font-semibold text-[#E8F0F0]">Contact</th>
+                        <th className="py-4 px-6 text-left text-sm font-semibold text-[#E8F0F0]">Location</th>
+                        <th className="py-4 px-6 text-left text-sm font-semibold text-[#E8F0F0]">Status</th>
+                        <th className="py-4 px-6 text-left text-sm font-semibold text-[#E8F0F0]">Join Date</th>
+                        <th className="py-4 px-6 text-left text-sm font-semibold text-[#E8F0F0]">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-gray-100">
+                    <tbody className="divide-y divide-[#2a3a6a]">
                       {filteredUsers.length === 0 ? (
                         <tr>
                           <td colSpan={6} className="py-12 text-center">
                             <div className="flex flex-col items-center">
-                              <Users className="text-gray-300 mb-3" size={48} />
-                              <p className="text-gray-500">No users found</p>
+                              <Users className="text-[#4a5a8a] mb-3" size={48} />
+                              <p className="text-[#b0c4c4]">No users found</p>
                               {searchTerm && (
-                                <p className="text-gray-400 text-sm mt-1">Try a different search term</p>
+                                <p className="text-[#7a8ab8] text-sm mt-1">Try a different search term</p>
                               )}
                             </div>
                           </td>
                         </tr>
                       ) : (
                         filteredUsers.map((user) => (
-                          <tr key={user.email} className="hover:bg-blue-50 transition-colors">
+                          <tr key={user.email} className="hover:bg-[#2a3a6a] transition-colors">
                             <td className="py-4 px-6">
                               <div className="flex items-center">
-                                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mr-3">
-                                  <span className="text-white font-bold text-sm">
+                                <div className="w-10 h-10 bg-gradient-to-r from-[#F09848] to-[#ffb366] rounded-xl flex items-center justify-center mr-3">
+                                  <span className="text-[#182850] font-bold text-sm">
                                     {getInitials(user.name)}
                                   </span>
                                 </div>
                                 <div>
-                                  <p className="font-medium text-gray-800">{user.name}</p>
-                                  <p className="text-sm text-gray-500">{user.districtCode}</p>
+                                  <p className="font-medium text-[#E8F0F0]">{user.name}</p>
+                                  <p className="text-sm text-[#b0c4c4]">{user.districtCode}</p>
                                 </div>
                               </div>
                             </td>
                             <td className="py-4 px-6">
-                              <p className="text-gray-800">{user.email}</p>
-                              <p className="text-sm text-gray-500">No phone</p>
+                              <p className="text-[#E8F0F0]">{user.email}</p>
+                              <p className="text-sm text-[#b0c4c4]">No phone</p>
                             </td>
                             <td className="py-4 px-6">
                               <div>
-                                <p className="text-gray-800">{user.city}, {user.state}</p>
-                                <p className="text-sm text-gray-500">{user.country}</p>
+                                <p className="text-[#E8F0F0]">{user.city}, {user.state}</p>
+                                <p className="text-sm text-[#b0c4c4]">{user.country}</p>
                               </div>
                             </td>
                             <td className="py-4 px-6">
-                              <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${user.status === "active" ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`}>
-                                <span className={`w-2 h-2 rounded-full mr-2 ${user.status === "active" ? 'bg-green-500' : 'bg-gray-400'}`}></span>
+                              <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${user.status === "active" ? 'bg-green-400/20 text-green-400 border border-green-400/30' : 'bg-[#4a5a8a] text-[#b0c4c4] border border-[#2a3a6a]'}`}>
+                                <span className={`w-2 h-2 rounded-full mr-2 ${user.status === "active" ? 'bg-green-400' : 'bg-[#b0c4c4]'}`}></span>
                                 {user.status === "active" ? "Active" : "Inactive"}
                               </span>
                             </td>
-                            <td className="py-4 px-6 text-gray-600">
+                            <td className="py-4 px-6 text-[#b0c4c4]">
                               {user.joinDate}
                             </td>
                             <td className="py-4 px-6">
                               <div className="flex items-center space-x-2">
                                 <button
                                   onClick={() => handleRemoveUser(user.email)}
-                                  className="p-2 text-red-600 hover:text-red-800 hover:bg-red-50 rounded-lg transition-colors"
+                                  className="p-2 text-[#ff6b6b] hover:text-[#ff8e8e] hover:bg-[#ff6b6b]/10 rounded-lg transition-colors border border-transparent hover:border-[#ff6b6b]/30"
                                   title="Remove User"
                                 >
                                   <Trash2 size={18} />
                                 </button>
-                                <button className="p-2 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-colors" title="View Details">
+                                <button className="p-2 text-[#F09848] hover:text-[#ffb366] hover:bg-[#F09848]/10 rounded-lg transition-colors border border-transparent hover:border-[#F09848]/30" title="View Details">
                                   <Eye size={18} />
                                 </button>
-                                <button className="p-2 text-gray-600 hover:text-gray-800 hover:bg-gray-50 rounded-lg transition-colors" title="More Options">
+                                <button className="p-2 text-[#b0c4c4] hover:text-[#E8F0F0] hover:bg-[#2a3a6a] rounded-lg transition-colors" title="More Options">
                                   <MoreVertical size={18} />
                                 </button>
                               </div>
@@ -491,19 +491,19 @@ const Admin: React.FC = () => {
                 </div>
 
                 {/* Table Footer */}
-                <div className="p-4 border-t border-gray-200 bg-gray-50">
+                <div className="p-4 border-t border-[#2a3a6a] bg-[#2a3a6a]">
                   <div className="flex items-center justify-between">
-                    <p className="text-sm text-gray-600">
-                      Showing <span className="font-semibold">{filteredUsers.length}</span> of <span className="font-semibold">{users.length}</span> users
+                    <p className="text-sm text-[#b0c4c4]">
+                      Showing <span className="font-semibold text-[#E8F0F0]">{filteredUsers.length}</span> of <span className="font-semibold text-[#E8F0F0]">{users.length}</span> users
                     </p>
                     <div className="flex items-center space-x-2">
-                      <button className="px-3 py-1.5 border border-gray-300 rounded-lg text-sm hover:bg-white transition-colors">
+                      <button className="px-3 py-1.5 border border-[#2a3a6a] rounded-lg text-sm hover:bg-[#1e3058] transition-colors text-[#b0c4c4]">
                         Previous
                       </button>
-                      <button className="px-3 py-1.5 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors">
+                      <button className="px-3 py-1.5 bg-[#F09848] text-[#182850] rounded-lg text-sm hover:bg-[#ffb366] transition-colors font-semibold">
                         1
                       </button>
-                      <button className="px-3 py-1.5 border border-gray-300 rounded-lg text-sm hover:bg-white transition-colors">
+                      <button className="px-3 py-1.5 border border-[#2a3a6a] rounded-lg text-sm hover:bg-[#1e3058] transition-colors text-[#b0c4c4]">
                         Next
                       </button>
                     </div>
@@ -511,10 +511,10 @@ const Admin: React.FC = () => {
                 </div>
 
                 {userMsg && (
-                  <div className="mx-6 mb-6 p-4 bg-blue-50 border border-blue-200 rounded-xl">
+                  <div className="mx-6 mb-6 p-4 bg-[#F09848]/10 border border-[#F09848]/30 rounded-xl">
                     <div className="flex items-center">
-                      <CheckCircle className="text-blue-600 mr-3" size={20} />
-                      <p className="text-blue-700 font-medium">{userMsg}</p>
+                      <CheckCircle className="text-[#F09848] mr-3" size={20} />
+                      <p className="text-[#F09848] font-medium">{userMsg}</p>
                     </div>
                   </div>
                 )}
@@ -527,7 +527,7 @@ const Admin: React.FC = () => {
             <div className="lg:col-span-1">
               <div className="space-y-6">
                 {/* Quick Stats */}
-                <div className="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl p-6 text-white shadow-lg">
+                <div className="bg-gradient-to-r from-[#182850] to-[#2a3a6a] rounded-2xl p-6 text-[#E8F0F0] shadow-lg border border-[#F09848]/30">
                   <h4 className="text-lg font-bold mb-4">Flight Operations</h4>
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
@@ -550,8 +550,8 @@ const Admin: React.FC = () => {
                 </div>
 
                 {/* Recent Activity */}
-                <div className="bg-white rounded-2xl shadow-lg border border-blue-100 p-6">
-                  <h4 className="text-lg font-bold text-gray-800 mb-4">Recent Actions</h4>
+                <div className="bg-[#1e3058] rounded-2xl shadow-lg border border-[#2a3a6a] p-6">
+                  <h4 className="text-lg font-bold text-[#E8F0F0] mb-4">Recent Actions</h4>
                   <div className="space-y-3">
                     {[
                       { time: "10:30 AM", action: "Flight AA245 added" },
@@ -559,11 +559,11 @@ const Admin: React.FC = () => {
                       { time: "Yesterday", action: "System maintenance" },
                       { time: "Mar 12", action: "Flight schedule updated" },
                     ].map((activity, index) => (
-                      <div key={index} className="flex items-start space-x-3 p-3 hover:bg-blue-50 rounded-xl transition-colors">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                      <div key={index} className="flex items-start space-x-3 p-3 hover:bg-[#2a3a6a] rounded-xl transition-colors">
+                        <div className="w-2 h-2 bg-[#F09848] rounded-full mt-2"></div>
                         <div className="flex-1">
-                          <p className="text-gray-800">{activity.action}</p>
-                          <p className="text-xs text-gray-500">{activity.time}</p>
+                          <p className="text-[#E8F0F0]">{activity.action}</p>
+                          <p className="text-xs text-[#b0c4c4]">{activity.time}</p>
                         </div>
                       </div>
                     ))}
@@ -575,14 +575,14 @@ const Admin: React.FC = () => {
         </div>
 
         {/* Footer Note */}
-        <div className="mt-8 p-4 bg-white rounded-xl shadow-sm border border-blue-100">
+        <div className="mt-8 p-4 bg-[#1e3058] rounded-xl shadow-sm border border-[#2a3a6a]">
           <div className="flex items-center">
-            <Shield className="text-blue-600 mr-3" size={20} />
+            <Shield className="text-[#F09848] mr-3" size={20} />
             <div>
-              <p className="text-sm text-gray-700">
+              <p className="text-sm text-[#E8F0F0]">
                 <span className="font-semibold">Security Note:</span> Admin actions are logged and monitored.
               </p>
-              <p className="text-xs text-gray-500 mt-1">
+              <p className="text-xs text-[#b0c4c4] mt-1">
                 All changes are irreversible and require confirmation.
               </p>
             </div>
