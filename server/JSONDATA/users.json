@@ -7,5 +7,14 @@
     "district": "Unknown",
     "city": "Unknown",
     "districtCode": "0000"
+  },
+  {
+    "name": "Anchal Singh",
+    "email": "singhanchal@gmail.com",
+    "country": "India",
+    "state": "UP",
+    "district": "Ayodhya",
+    "city": "Lucknow",
+    "districtCode": "3254"
   }
 ]
